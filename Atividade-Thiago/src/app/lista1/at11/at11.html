@@ -1,0 +1,13 @@
+<h3>{{ produto }}</h3>
+<p>Preço: {{ preco | currency:'BRL' }}</p>
+
+<p>Quantidade: {{ quantidade }}
+  <button (click)="diminuir()" [disabled]="quantidade === 1">-</button>
+  <button (click)="aumentar()">+</button>
+</p>
+
+<p>Total: {{ preco * quantidade | currency:'BRL' }}</p>
+
+<button (click)="adicionarAoCarrinho()">Adicionar ao carrinho</button>
+
+<p *ngIf="mensagem">{{ mensagem }}</p>
